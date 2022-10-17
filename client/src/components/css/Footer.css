@@ -1,0 +1,14 @@
+.footerContainer {
+    background-color: #0e0203;
+    color: aliceblue;
+    display: flex;
+    height: 4vh;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:1000px) {
+    .footerContainer {
+        height: 10vh;
+    }
+}

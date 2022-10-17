@@ -1,0 +1,98 @@
+.dogDetailsContainer {
+    background-color: #e3e3e3;
+    height: 86vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.dogDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 94%;
+    background-color: #858062;
+    border-radius: 20px 20px 0 0;
+}
+
+.dogDetails img {
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    height: 55%;
+    width: 95%;
+}
+
+.dogDetails div {
+    width: 95%;
+    height: 38.5%;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dogDetails div h2 {
+    font-size: 40px;
+    margin-bottom: 2vh;
+}
+
+.dogDetails div h3 {
+    font-size: 20px;
+    margin-bottom: 2vh;
+    text-align: start;
+}
+
+.dogDetails hr {
+    margin-bottom: 1vh;
+    height: 2.5px;
+    width: 95%;
+    background-color: aliceblue;
+    border: 0px;
+}
+
+@media screen and (max-width:1000px) {
+    .dogDetailsContainer {
+        align-items: center;
+        max-height: 84vh;
+    }
+    .dogDetails {
+        height: auto;
+        max-height: 90%;
+        width: 90%;
+        border-radius: 20px;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+    .dogDetails img {
+        margin-top: 1.2vh;
+        height: auto;
+        width: 95%;
+        border-radius: 15px 15px 0 0;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .dogDetailsContainer {
+        min-height: 76vh;
+        height: auto;
+    }
+    .dogDetails div h2 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .dogDetails div h3 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .dogDetails div h2 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .dogDetails div h3 {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,302 @@
+.createDogForm {
+    margin-top: 30px;
+}
+
+.createDogContainer {
+    min-height: 86vh;
+    display: flex;
+    background-color: #e3e3e3;
+    flex-direction: column
+}
+
+.inputsAndImage {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.allInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 40%;
+}
+
+.allInputs h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5vh;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 4vh;
+    width: 60vh;
+    height: 100px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputStructure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputStructure label {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 1vh;
+}
+
+.inputStructure input {
+    width: 20vh;
+    height: 2.8vh;
+    border: 0px;
+    font-size: 16px;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+.nameInputStructure {
+    margin-bottom: 20px;
+}
+
+.nameInputStructure div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35vh;
+    height: 8vh;
+    border-radius: 20px;
+    background-color: antiquewhite;
+}
+
+.nameInputStructure input {
+    width: 30vh;
+    height: 3.2vh;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.nameAndImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nameAndImage h3 {
+    font-size: 40px;
+    margin-bottom: 6px;
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    width: 42vh;
+    height: 55vh;
+    border-radius: 20px;
+}
+
+.imageContainer hr {
+    width: 80%;
+    height: 2px;
+    background-color: #0000004b;
+    border: none;
+    margin-bottom: 16px;
+}
+
+.imgContainer img {
+    width: 76%;
+    margin-bottom: 4px;
+    margin-top: 3%;
+}
+
+.selectImage input {
+    display: none;
+}
+
+.selectImage label {
+    cursor: pointer;
+}
+
+.selectImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: crimson;
+    width: 15vh;
+    height: 5vh;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+}
+
+.selectImage:hover {
+    transform: scale(1.1);
+    background-color: #0e0203;
+    color: white;
+}
+
+.tempsRemover {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 34vh;
+    max-height: 8vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+
+.tempsRemover::-webkit-scrollbar {
+    width: 4px;
+    height: 2px;
+    background-color: rgba(199, 190, 178, 0.733);
+    border-radius: 100px;
+}
+
+.tempContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e0203;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+.tempContainer button {
+    text-align: center;
+    margin-left: 8px;
+    background-color: bisque;
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    font-weight: 600;
+}
+
+.tempContainer button:hover {
+    background-color: cadetblue;
+}
+
+.temperamentInputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+}
+
+.temperamentInputContainer select {
+    appearance: none;
+    width: 30vh;
+    height: 4vh;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.inputError {
+    background-color: rgba(216, 20, 59, 0.521);
+}
+
+.createButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.createDogButton {
+    width: 170px;
+    height: 60px;
+    background-color: #0e0203;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: all 1s;
+}
+
+.createDogSpan {
+    font-size: 1.3rem;
+    margin-top: 0.4vh;
+}
+
+.createDogButton:hover {
+    transform: scale(1.1);
+    background-color: antiquewhite;
+    color: #0e0203;
+}
+
+@media screen and (max-width:1000px) {
+    .inputsAndImage {
+        flex-direction: column-reverse;
+    }
+    .allInputs {
+        width: 100%;
+        height: auto;
+        margin-top: 5vh;
+    }
+    .allInputs h4 {
+        font-size: 1.5rem;
+        margin-bottom: 1vh;
+    }
+    .nameInputStructure div {
+        height: 10vh;
+    }
+    .inputContainer {
+        width: 95%;
+        height: 15vh;
+    }
+    .inputStructure label {
+        font-size: 18px;
+    }
+    .inputStructure input {
+        width: 80%;
+        height: 4.4vh;
+    }
+    .selectImage {
+        width: 28vh;
+        height: 8vh;
+    }
+    .temperamentBox {
+        order: -1;
+        margin-bottom: 3vh;
+    }
+    .temperamentInputContainer {
+        width: 100%;
+    }
+    .temperamentInputContainer select {
+        height: 8vh;
+        width: 34vh;
+    }
+    .createButtonContainer {
+        margin-bottom: 2vh;
+    }
+}

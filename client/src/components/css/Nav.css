@@ -1,0 +1,74 @@
+.navContainer {
+    background-color: #0e0203;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homeLink h2 {
+    color: #efe8c7;
+}
+
+.homeLink {
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    transition: all 3s;
+}
+
+.homeLink:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.homeLink img {
+    height: 58px;
+}
+
+.homeLink h2 {
+    margin-top: 18px;
+    margin-left: -8px;
+}
+
+.navTitle {
+    font-size: 34px;
+}
+
+.createDogLink {
+    font-size: 20px;
+    background-color: #efe8c7;
+    color: black;
+    height: 6vh;
+    width: 22vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 14px;
+    transition: 1s;
+}
+
+.createDogLink:hover {
+    transform: scale(1.06)
+}
+
+@media screen and (max-width:700px) {
+    .navContainer {
+        height: 14vh;
+    }
+    .homeLink img {
+        height: 80%;
+    }
+    .navTitle {
+        font-size: 1.6rem;
+    }
+    .createDogLink {
+        width: auto;
+        height: auto;
+        font-size: 1rem;
+        padding: 4px;
+    }
+}

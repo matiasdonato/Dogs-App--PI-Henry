@@ -1,0 +1,290 @@
+.homeContainer {
+    background-color: #e3e3e3;
+}
+
+.seeFiltersButton {
+    width: 100%;
+    border: 0px;
+    margin-bottom: 1vh;
+    background-color: #efe8c7;
+    height: 3vh;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.seeFiltersButton:hover {
+    background-color: #858062;
+}
+
+.bigFilterContainer {
+    transition: all 1s ease;
+    background-color: #574345;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.filterContainer div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.filterContainer div label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0.6vh;
+    margin-bottom: 0.8vh;
+}
+
+.filterContainer div select {
+    appearance: none;
+    width: 30vh;
+    height: 4vh;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.filterContainer div select:hover {
+    background-color: #0e0203;
+    color: aliceblue;
+}
+
+.cleanFiltersButton {
+    width: 26vh;
+    height: 3.5vh;
+    margin: 1.4vh;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #0e0203;
+    color: aliceblue;
+    transition: 0.4s;
+}
+
+.cleanFiltersButton:hover {
+    background-color: #858062;
+    transform: scale(1.1);
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchInput {
+    height: 3vh;
+    width: 30vh;
+    border-radius: 5px;
+    border: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+.searchButton {
+    height: 3.5vh;
+    width: 15vh;
+    margin-left: 10px;
+    background-color: #0e0203;
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: 0.4s;
+    border: 0px;
+}
+
+.searchButton:hover {
+    background-color: #858062;
+    transform: scale(1.1);
+}
+
+.cleanSearchButton {
+    height: 3.5vh;
+    width: 20vh;
+    margin-right: 10px;
+    background-color: #0e0203;
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: 0.4s;
+    border: 0px;
+}
+
+.cleanSearchButton:hover {
+    background-color: #858062;
+    transform: scale(1.08);
+}
+
+.pageChangerNext {
+    height: 3.5vh;
+    width: 10vh;
+    margin: 1vh 0.3vh 1vh 0.3vh;
+    background-color: #0e0203;
+    color: aliceblue;
+    font-size: 18px;
+    border-radius: 0 10px 10px 0;
+    transition: 0.4s;
+    border: 0px;
+    cursor: pointer;
+}
+
+.pageChangerPrevious {
+    height: 3.5vh;
+    width: 10vh;
+    margin: 1vh 0.3vh 1vh 0.3vh;
+    background-color: #0e0203;
+    color: aliceblue;
+    font-size: 18px;
+    border-radius: 10px 0 0 10px;
+    transition: 0.4s;
+    border: 0px;
+    cursor: pointer;
+}
+
+.pageChangerPrevious:hover {
+    background-color: #858062;
+    transform: scale(1.03);
+}
+
+.pageChangerNext:hover {
+    background-color: #858062;
+    transform: scale(1.03);
+}
+
+.pageSelector {
+    height: 3.5vh;
+    width: 10vh;
+    margin: 0.14vh;
+    background-color: #0e0203;
+    color: aliceblue;
+    font-size: 18px;
+    transition: 0.4s;
+    border: 0px;
+    cursor: pointer;
+}
+
+.pageSelector:hover {
+    background-color: #858062;
+    transform: scale(1.02);
+}
+
+.actualPage {
+    background-color: #858062;
+}
+
+.dogsBox {
+    width: 100%;
+    display: flex;
+    min-height: 73vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.bigDogsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 70%;
+}
+
+.dogsContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width:1000px) {
+    .pageSelector {
+        width: 5vh;
+        height: 6vh;
+        font-size: 1rem;
+    }
+    .pageChangerPrevious {
+        width: 6vh;
+        height: 6vh;
+        font-size: 1rem;
+    }
+    .pageChangerNext {
+        width: 6vh;
+        height: 6vh;
+        font-size: 1rem;
+    }
+    .seeFiltersButton {
+        height: 5vh;
+    }
+    .formContainer {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        flex-direction: column-reverse;
+    }
+    .searchInput {
+        height: 6vh;
+        width: 60%;
+    }
+    .searchButton {
+        height: 6vh;
+        width: 25%;
+    }
+    .cleanSearchButton {
+        height: 6vh;
+        width: 69%;
+        margin-top: 2vh;
+    }
+    .filterContainer {
+        flex-direction: column;
+    }
+    .filterContainer div {
+        font-weight: 700;
+        align-items: center;
+        margin-bottom: 2vh;
+    }
+    .filterContainer div select {
+        width: 40vh;
+        height: 6vh;
+        font-size: 18px;
+    }
+    .cleanFiltersButton {
+        width: 40vh;
+        height: 7vh;
+        margin: 2vh;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .dogsBox {
+        width: 100%;
+        display: flex;
+        min-height: 72vh;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .bigDogsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 70%;
+    }
+    .dogsContainer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
