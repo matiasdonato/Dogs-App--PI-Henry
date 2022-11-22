@@ -18,22 +18,11 @@ export default function Nav(){
                     <h2 className="navTitle">Dog App</h2>
                 </Link>
             </div>
-            <Link to={"/dogs/createdog"}>
-                <div className="createDogLink">
+            <Link to={"/dogs/createdog"} className="createDogLink">
+                <div >
                     <h2>Create Dog</h2>
                 </div>
             </Link>
         </div>
     )
 }
-
-// { 
-//     dogs.length > 0 ? 
-//         (dogs.length > 4 ? 
-//             <div className="bigDogsContainer">
-//                 <div className="dogsContainer">{(currentDogs.slice(0,4).map(d => <DogCard className="dogCardInBox" dog={d}/>))}</div> 
-//                 <div className="dogsContainer">{(currentDogs.slice(4).map(d => <DogCard className="dogCardInBox" dog={d}/>))}</div>
-//             </div> : 
-//         <div className="dogsContainer">{currentDogs.map(d => <DogCard dog={d}/>)}</div>) : 
-//     <span>No se encontraron resultados</span>
-// }

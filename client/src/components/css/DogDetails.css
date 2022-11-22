@@ -1,6 +1,14 @@
+.loadingContainer{
+    height: 86.4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+
+}
+
 .dogDetailsContainer {
     background-color: #e3e3e3;
-    height: 86vh;
+    height: 86.4vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -11,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     height: 94%;
+    min-width: 36%;
     background-color: #858062;
     border-radius: 20px 20px 0 0;
 }
@@ -66,6 +75,7 @@
     .dogDetails img {
         margin-top: 1.2vh;
         height: auto;
+        max-height: 40vh;
         width: 95%;
         border-radius: 15px 15px 0 0;
     }

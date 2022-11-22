@@ -9,7 +9,7 @@ export function getApiDogs() {
 
 export function getDbDogs() {
     return function(dispatch) {
-        return fetch("http://localhost:3001/dogs")
+        return fetch("https://dogs-app-matiasdonato.herokuapp.com/dogs")
             .then(r => r.json())
             .then(dogs => dispatch({ type: "GET_DB_DOGS", payload: dogs }))
             .catch(() => dispatch({ type: "GET_DB_DOGS", payload: "error" }))
@@ -37,7 +37,7 @@ export function searchDbDogs(breed) {
         return { type: "SEARCH_DB_DOGS", payload: [] }
     }
     return function(dispatch) {
-        return fetch(`http://localhost:3001/dogs?name=${breed}`)
+        return fetch(`https://dogs-app-matiasdonato.herokuapp.com/dogs?name=${breed}`)
             .then(r => r.json())
             .then(dogs => dispatch({ type: "SEARCH_DB_DOGS", payload: dogs }))
             .catch(() => dispatch({ type: "SEARCH_DB_DOGS", payload: [] }))
@@ -47,10 +47,11 @@ export function searchDbDogs(breed) {
 
 export function getTemperaments() {
     return function(dispatch) {
-        return fetch(`http://localhost:3001/temperaments`)
+        return fetch(`https://dogs-app-matiasdonato.herokuapp.com/temperaments`)
             .then(r => r.json())
             .then(temps => dispatch({ type: "GET_TEMPERAMENTS", payload: temps }))
-            .catch()
+            .then(temps => console.log(temps))
+            .catch(err => console.log(err))
     }
 }
 
@@ -61,10 +62,10 @@ export function cleanDogs() {
 export function getDogDetails(id) {
     if (id > 999) {
         return function(dispatch) {
-            return fetch(`http://localhost:3001/dogs/${id}`)
+            return fetch(`https://dogs-app-matiasdonato.herokuapp.com/dogs/${id}`)
                 .then(r => r.json())
                 .then(dog => dispatch({ type: "GET_DOG_DETAILS", payload: dog }))
-                .catch()
+                .catch(err => console.log(err))
         }
     } else {
         return { type: "GET_DOG_DETAILS", payload: id }
@@ -85,7 +86,7 @@ export function getDogImage(dog, apiDogs) {
         return img
     } else {
         if (dog.id > 999) {
-            let img = `http://localhost:3001/dogs/images/${dog.image}`
+            let img = dog.image
             return img
         } else {
             let img = dog.image.url

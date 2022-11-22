@@ -1,6 +1,6 @@
 .navContainer {
     background-color: #0e0203;
-    height: 10vh;
+    height: 90px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -41,8 +41,8 @@
     font-size: 20px;
     background-color: #efe8c7;
     color: black;
-    height: 6vh;
-    width: 22vh;
+    height: 56px;
+    width: 24%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,15 +52,19 @@
 }
 
 .createDogLink:hover {
-    transform: scale(1.06)
+    transform: scale(1.03)
 }
 
 @media screen and (max-width:700px) {
     .navContainer {
         height: 14vh;
     }
+    .homeLink {
+        max-width: 300px;
+    }
     .homeLink img {
         height: 80%;
+        max-width: 50px;
     }
     .navTitle {
         font-size: 1.6rem;

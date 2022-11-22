@@ -1,22 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { searchApiDogs, searchDbDogs, cleanDogs} from "../redux/actions/actions";
+import { searchApiDogs, searchDbDogs, cleanDogs, getAllDogs, getApiDogs, getDbDogs, getTemperaments} from "../redux/actions/actions";
 import DogCard from "./DogCard.jsx";
 import "./css/Home.css"
 
 export default function Home(){
     let dispatch = useDispatch();
 
+    let [loading, setLoading] = useState(true)
+    
+    let permanentDogs = useSelector(state => state.permanentDogs)
+    async function fetchData(){
+        if (permanentDogs.length === 0) {
+            await dispatch(getApiDogs())
+            await dispatch(getDbDogs())
+            dispatch(getTemperaments())
+            dispatch(getAllDogs())
+        }
+        setLoading(false)
+    }
 
     useEffect(() => {
+        fetchData()
         dispatch(cleanDogs())
     }, [])
 
-    let permanentDogs = useSelector(state => state.permanentDogs)
+    
     let dogs = useSelector(state => state.dogs) 
+    dogs = dogs.filter(d => d.name)
 
     let temperaments = useSelector(state => state.temperaments)
+    console.log(temperaments)
 
 
 // Busqueda
@@ -220,11 +235,17 @@ export default function Home(){
     
 // Fin de la paginacion
 
+    if (loading === true) {
+        return(
+            <div className="loadingContainer">
+                loading
+            </div>
+        )
+    }
 
     return(
-        <div className="homeContainer">
-            {seeFilters === true && 
-            <div className="bigFilterContainer">
+        <div className="homeContainer"> 
+            <div className={seeFilters === true ? "bigFilterContainer showFilter": "bigFilterContainer"}>
                 <div className="filterContainer">
                     <div>
                         <label htmlFor="petOrder">Sort by:</label>
@@ -258,7 +279,7 @@ export default function Home(){
                 </div>
                 <button onClick={filterClear} className="cleanFiltersButton">Clear Filters</button>
             </div> 
-            }
+            
             <button onClick={() => {
                 if (seeFilters === true) {
                     setSeeFilters(false)

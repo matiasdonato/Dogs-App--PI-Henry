@@ -17,21 +17,18 @@ module.exports = {
                         presets: ['@babel/preset-react', '@babel/preset-env']
                     }
                 }
-            }, {
+            },
+            {
                 test: /\.css$/,
                 use: [{
                         loader: "style-loader"
                     },
                     {
-                        loader: "css-loader",
-                        options: {
-                            modules: {
-                                localIdentName: "[path][name]___[local]--[hash:base64:5]",
-                            },
-                        },
+                        loader: "css-loader"
                     }
-                ],
-            }, {
+                ]
+            },
+            {
                 test: /\.gcss$/,
                 use: ["style-loader", "css-loader"],
             },

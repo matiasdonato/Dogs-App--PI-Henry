@@ -1,3 +1,10 @@
+.loadingContainer {
+    height: 86.4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
 .homeContainer {
     background-color: #e3e3e3;
 }
@@ -7,7 +14,7 @@
     border: 0px;
     margin-bottom: 1vh;
     background-color: #efe8c7;
-    height: 3vh;
+    height: 30px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -19,8 +26,16 @@
 }
 
 .bigFilterContainer {
-    transition: all 1s ease;
+    max-height: 0px;
     background-color: #574345;
+    overflow: hidden;
+    transition: all 0.38s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.showFilter {
+    height: auto;
+    max-height: 1000px;
+    transition: all 0.38s cubic-bezier(1, 0, 1, 0);
 }
 
 .filterContainer {
@@ -44,8 +59,8 @@
 
 .filterContainer div select {
     appearance: none;
-    width: 30vh;
-    height: 4vh;
+    width: 240px;
+    height: 40px;
     border: 2px solid rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     transition: all 0.25s ease;
@@ -59,8 +74,8 @@
 }
 
 .cleanFiltersButton {
-    width: 26vh;
-    height: 3.5vh;
+    width: 260px;
+    height: 36px;
     margin: 1.4vh;
     cursor: pointer;
     font-size: 18px;
@@ -84,8 +99,8 @@
 }
 
 .searchInput {
-    height: 3vh;
-    width: 30vh;
+    height: 26px;
+    width: 265px;
     border-radius: 5px;
     border: 0px;
     padding-left: 10px;
@@ -94,8 +109,8 @@
 }
 
 .searchButton {
-    height: 3.5vh;
-    width: 15vh;
+    height: 30px;
+    width: 125px;
     margin-left: 10px;
     background-color: #0e0203;
     color: aliceblue;
@@ -112,8 +127,8 @@
 }
 
 .cleanSearchButton {
-    height: 3.5vh;
-    width: 20vh;
+    height: 30px;
+    width: 160px;
     margin-right: 10px;
     background-color: #0e0203;
     color: aliceblue;
@@ -130,8 +145,8 @@
 }
 
 .pageChangerNext {
-    height: 3.5vh;
-    width: 10vh;
+    height: 28px;
+    width: 80px;
     margin: 1vh 0.3vh 1vh 0.3vh;
     background-color: #0e0203;
     color: aliceblue;
@@ -143,8 +158,8 @@
 }
 
 .pageChangerPrevious {
-    height: 3.5vh;
-    width: 10vh;
+    height: 28px;
+    width: 80px;
     margin: 1vh 0.3vh 1vh 0.3vh;
     background-color: #0e0203;
     color: aliceblue;
@@ -166,8 +181,8 @@
 }
 
 .pageSelector {
-    height: 3.5vh;
-    width: 10vh;
+    height: 28px;
+    width: 80px;
     margin: 0.14vh;
     background-color: #0e0203;
     color: aliceblue;
@@ -189,7 +204,7 @@
 .dogsBox {
     width: 100%;
     display: flex;
-    min-height: 73vh;
+    min-height: 74vh;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }

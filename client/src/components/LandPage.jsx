@@ -8,19 +8,6 @@ import "./css/LandPage.css"
 
 export default function LandPage(){
 
-    let dispatch = useDispatch()
-    
-    async function fetchData(){
-        await dispatch(getApiDogs())
-        await dispatch(getDbDogs())
-        dispatch(getTemperaments())
-        dispatch(getAllDogs())
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
-
     let number = Math.random() * (0 - 6) + 6
     number = Math.round(number)
     console.log(number)

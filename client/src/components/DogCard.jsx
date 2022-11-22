@@ -1,13 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getDogDetails, getDogImage} from "../redux/actions/actions";
+import { useSelector } from "react-redux";
+import { getDogImage} from "../redux/actions/actions";
 import { Link } from "react-router-dom";
 import "./css/DogCard.css"
 
 export default function DogCard({dog}){
     let apiDogs = useSelector(state => state.apiDogs)
     let image = getDogImage(dog, apiDogs);
-    let dispatch = useDispatch()
 
     let weight
     let temperament
@@ -24,7 +23,7 @@ export default function DogCard({dog}){
     }
     
     return(
-        <Link to={`/dogs/home/${dog.id}`} onClick={() => dispatch(getDogDetails(dog.id))}>
+        <Link to={`/dogs/home/${dog.id}`}>
             <div className="dogCardContainer">
                 <img src={image} alt={dog.name} />
                 <div>

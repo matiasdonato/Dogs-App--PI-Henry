@@ -3,7 +3,9 @@ const { Op } = require("sequelize");
 let router = Router();
 let { Breed, Temper } = require("../db/index.js");
 let upload = require("../storage/storage.js");
-let fs = require("fs")
+let cloudinary = require("../storage/cloudinary.js")
+let fs = require("fs");
+
 
 
 //?api_key=live_qJ4geMUe7XLJIdOTOzYE3SXypdeNQaOUjJnfaU11zHCLGMS93J0gKX7AeIl8YkQX
@@ -57,6 +59,20 @@ router.get("/:idRaza", async(req, res) => {
 
 })
 
+router.post("/upload/try", upload.single("image"), async(req, res) => {
+    let image = req.file.filename
+    let uploadResult = await cloudinary.uploader.upload(`./src/storage/imgs/${image}`, {
+            folder: "dogs",
+        })
+        .catch(err => console.log(err))
+
+    let uploadImage = {
+        public_id: uploadResult.public_id,
+        url: uploadResult.secure_url
+    }
+    res.send(uploadImage)
+})
+
 router.post("/", upload.single("image"), async(req, res) => {
     let { name, min_height, max_height, min_weight, max_weight, min_life, max_life, tempsId } = req.body;
     if (!name || !min_height || !max_height || !min_weight || !max_weight || !tempsId) {
@@ -76,8 +92,13 @@ router.post("/", upload.single("image"), async(req, res) => {
 
     if (req.file) {
         image = req.file.filename
-    }
+        let uploadResult = await cloudinary.uploader.upload(`./src/storage/imgs/${image}`, {
+                folder: "dogs",
+            })
+            .catch(err => res.send(err))
 
+        image = uploadResult.secure_url
+    }
 
     let newBreed = await Breed.create({
         name,
@@ -97,17 +118,20 @@ router.post("/", upload.single("image"), async(req, res) => {
     res.status(200).json(newBreed);
 })
 
-router.get("/images/:imageName", (req, res) => {
-    let image = req.params.imageName
-    fs.readFile(`./storage/imgs/${image}`, (err, data) => {
-        if (err) {
-            res.send("no se encontro la imagen")
-        } else {
-            res.setHeader("Content-Type", "image/jpg")
-            res.send(data)
-        }
-    })
-})
+// router.get("/images/:imageName", (req, res) => {
+//     let image = req.params.imageName
+//     fs.readFile(`./src/storage/imgs/${image}`, (err, data) => {
+//         if (err) {
+//             console.log(err)
+//             res.send(err)
+//         } else {
+//             res.setHeader("Content-Type", "image/jpg")
+//             res.send(data)
+//         }
+//     })
+// })
+
+
 
 
 

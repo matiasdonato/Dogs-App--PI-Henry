@@ -15,7 +15,7 @@ export default function App() {
       <Route path={"/dogs"} render={()=> <Nav/> } />
       <Route exact path={"/dogs/home"} render={()=> <Home/> } />
       <Route path={"/dogs/createdog"} render={()=> <CreateDog/>} />
-      <Route path={"/dogs/home/:dogId"} render={({match})=> <DogDetails id={Number(match.params.dogId)}/>}></Route>
+      <Route path={"/dogs/home/:dogId"} render={({match})=> <DogDetails id={parseInt(match.params.dogId)}/>}></Route>
       <Route path={"/dogs"} render={()=> <Footer/> } />
     </div>
   );
