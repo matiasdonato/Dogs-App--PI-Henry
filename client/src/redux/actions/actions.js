@@ -1,6 +1,5 @@
 export function getApiDogs() {
     return function(dispatch) {
-        console.log(`${process.env.REACT_APP_DOG_API}`)
         return fetch(`${process.env.REACT_APP_DOG_API}`)
             .then(r => r.json())
             .then(dogs => dispatch({ type: "GET_API_DOGS", payload: dogs }))
@@ -48,11 +47,12 @@ export function searchDbDogs(breed) {
 
 export function getTemperaments() {
     return function(dispatch) {
-        return fetch(`${process.env.REACT_APP_DOG_SV_URL}/temperaments`)
-            .then(r => r.json())
-            .then(temps => dispatch({ type: "GET_TEMPERAMENTS", payload: temps }))
-            .then(temps => console.log(temps))
-            .catch(err => console.log(err))
+        `${process.env.REACT_APP_DOG_SV_URL}/dogs?name=${breed}`
+        // return fetch(`${process.env.REACT_APP_DOG_SV_URL}/temperaments`)
+        //     .then(r => r.json())
+        //     .then(temps => dispatch({ type: "GET_TEMPERAMENTS", payload: temps }))
+        //     .then(temps => console.log(temps))
+        //     .catch(err => console.log(err))
     }
 }
 
