@@ -1,6 +1,6 @@
 export function getApiDogs() {
     return function(dispatch) {
-        return fetch(`${process.env.REACT_APP_DOG_API}`)
+        return fetch(`https://api.thedogapi.com/v1/breeds?api_key=live_qJ4geMUe7XLJIdOTOzYE3SXypdeNQaOUjJnfaU11zHCLGMS93J0gKX7AeIl8YkQX`)
             .then(r => r.json())
             .then(dogs => dispatch({ type: "GET_API_DOGS", payload: dogs }))
             .catch(() => dispatch({ type: "GET_API_DOGS", payload: "error" }))
@@ -9,7 +9,7 @@ export function getApiDogs() {
 
 export function getDbDogs() {
     return function(dispatch) {
-        return fetch(`${process.env.REACT_APP_DOG_SV_URL}/dogs`)
+        return fetch(`https://dogsappapi.onrender.com/dogs`)
             .then(r => r.json())
             .then(dogs => dispatch({ type: "GET_DB_DOGS", payload: dogs }))
             .catch(() => dispatch({ type: "GET_DB_DOGS", payload: "error" }))
@@ -37,7 +37,7 @@ export function searchDbDogs(breed) {
         return { type: "SEARCH_DB_DOGS", payload: [] }
     }
     return function(dispatch) {
-        return fetch(`${process.env.REACT_APP_DOG_SV_URL}/dogs?name=${breed}`)
+        return fetch(`https://dogsappapi.onrender.com/dogs?name=${breed}`)
             .then(r => r.json())
             .then(dogs => dispatch({ type: "SEARCH_DB_DOGS", payload: dogs }))
             .catch(() => dispatch({ type: "SEARCH_DB_DOGS", payload: [] }))
@@ -47,7 +47,7 @@ export function searchDbDogs(breed) {
 
 export function getTemperaments() {
     return function(dispatch) {
-        return fetch(`${process.env.REACT_APP_DOG_SV_URL}/temperaments`)
+        return fetch(`https://dogsappapi.onrender.com/temperaments`)
             .then(r => r.json())
             .then(temps => dispatch({ type: "GET_TEMPERAMENTS", payload: temps }))
             .then(temps => console.log(temps))
@@ -62,7 +62,7 @@ export function cleanDogs() {
 export function getDogDetails(id) {
     if (id > 999) {
         return function(dispatch) {
-            return fetch(`${process.env.REACT_APP_DOG_SV_URL}/dogs/${id}`)
+            return fetch(`https://dogsappapi.onrender.com/dogs/${id}`)
                 .then(r => r.json())
                 .then(dog => dispatch({ type: "GET_DOG_DETAILS", payload: dog }))
                 .catch(err => console.log(err))

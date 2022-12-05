@@ -8,9 +8,6 @@ import "./css/Home.css"
 export default function Home(){
     let dispatch = useDispatch();
 
-
-    console.log(process.env.REACT_APP_DOG_SV_URL)
-
     let [loading, setLoading] = useState(true)
     
     let permanentDogs = useSelector(state => state.permanentDogs)
