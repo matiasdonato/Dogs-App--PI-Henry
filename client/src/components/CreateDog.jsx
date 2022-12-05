@@ -137,7 +137,7 @@ export default function CreateDog(){
     }
 
     function postNewDog(dog) {
-        return axios.post('https://dogs-app-matiasdonato.herokuapp.com/dogs', dog, {
+        return axios.post(`${process.env.REACT_APP_DOG_SV_URL}/dogs`, dog, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

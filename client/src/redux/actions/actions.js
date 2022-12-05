@@ -47,12 +47,11 @@ export function searchDbDogs(breed) {
 
 export function getTemperaments() {
     return function(dispatch) {
-        `${process.env.REACT_APP_DOG_SV_URL}/dogs?name=${breed}`
-        // return fetch(`${process.env.REACT_APP_DOG_SV_URL}/temperaments`)
-        //     .then(r => r.json())
-        //     .then(temps => dispatch({ type: "GET_TEMPERAMENTS", payload: temps }))
-        //     .then(temps => console.log(temps))
-        //     .catch(err => console.log(err))
+        return fetch(`${process.env.REACT_APP_DOG_SV_URL}/temperaments`)
+            .then(r => r.json())
+            .then(temps => dispatch({ type: "GET_TEMPERAMENTS", payload: temps }))
+            .then(temps => console.log(temps))
+            .catch(err => console.log(err))
     }
 }
 

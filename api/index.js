@@ -5,7 +5,7 @@ let LOCALPORT = 3001;
 
 db.sync({ force: false }).then(() => {
     app.listen(process.env.PORT || LOCALPORT, () => {
-        console.log(`server listening at ${LOCALPORT}`);
+        console.log(`server listening at ${process.env.PORT}`);
     })
 })
 
