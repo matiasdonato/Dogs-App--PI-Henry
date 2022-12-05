@@ -187,7 +187,7 @@ export default function CreateDog(){
                         <div className="inputContainer">
                             <div className="inputStructure">
                                 <label htmlFor="min_weight">Min(Kg):</label>
-                                <input className={error.min_weight && "inputError"}  type="number" name="min_weight"  value={input.min_weight}onChange= {handleInput}/>
+                                <input className={error.min_weight && "inputError"}  type="number" name="min_weight" value={input.min_weight} onChange= {handleInput}/>
                                 {error.min_weight && <span>{error.min_weight}</span>}
                             </div>
                             <div className="inputStructure">

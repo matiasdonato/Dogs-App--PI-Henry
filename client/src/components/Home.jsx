@@ -8,6 +8,7 @@ import "./css/Home.css"
 export default function Home(){
     let dispatch = useDispatch();
 
+
     let [loading, setLoading] = useState(true)
     
     let permanentDogs = useSelector(state => state.permanentDogs)
