@@ -1,5 +1,6 @@
 export function getApiDogs() {
     return function(dispatch) {
+        console.log(`${process.env.REACT_APP_DOG_API}`)
         return fetch(`${process.env.REACT_APP_DOG_API}`)
             .then(r => r.json())
             .then(dogs => dispatch({ type: "GET_API_DOGS", payload: dogs }))
